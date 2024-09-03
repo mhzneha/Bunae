@@ -1,0 +1,71 @@
+.product-details-container{
+    display: flex;
+    padding:20px;
+}
+.product-image{
+    width:450px;
+}
+img{
+    width: 100%;
+    height:500px;
+}
+.product-details{
+    padding:10px;
+}
+.product-details h2{
+    font-size: 32px;
+    padding: 5px;
+    font-weight: normal;
+}
+.product-details p{
+    padding: 10px;
+}
+.product-price{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--pink);
+}
+
+.product-price span::before{
+    content: "RS. "
+}
+.product-star{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+.product-star .staricon{
+   font-size: 25px;
+   color: #6d6363;
+}
+.add-to-cart-btn{
+    font-size: 16px;
+    color: var(--wht);
+    padding: 10px;
+    border: 1px solid var(--pink);
+    border-radius: 5px;
+    margin: 10px ;
+    background-color:var(--pink);
+}
+.product-details .user-input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.product-details .user-input input[type= radio]{
+    display: none;
+}
+.product-color, .product-size{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.user-input .product-color label, .product-size label{
+    border: 1px solid black;
+    padding:10px;
+    margin:5px;
+    cursor: pointer;
+}
+

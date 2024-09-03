@@ -1,0 +1,48 @@
+header{
+    display: flex;
+    padding-inline: 1rem;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #e9e9e9;
+}
+.logo{
+    font-family: "Qwitcher Grypen", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 70px;
+    color:black;
+    user-select: none;
+    cursor:pointer;
+}
+nav{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.nav-links{
+    display: flex;
+    gap: 1rem;
+}
+.nav-link{
+    padding: 0.5rem;
+    transition:all 0.3s ease ;
+    border-radius: 10px;
+    color: black;
+}
+.nav-link:hover{
+    color:var(--pink);
+}
+.nav-options{
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-icon{
+    padding: 5px;
+    font-size: 1.5rem;
+    transition: all 0.3s linear;
+    border-radius: 5px;
+    color:black;
+}
+.nav-icon:hover{
+    color:var(--pink);
+}
