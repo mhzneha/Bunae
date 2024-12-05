@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+:root{
+    --border:2px solid var(--black);
+   --box-shadow:0 .3rem 1rem rgba(0,0,0,.1);
+   --wht: #ffffff;
+   --pink:#fa504a;
+   --grey:#939185;
+   --brw:#b7825f;
+   --cream:#FFFDD0;
+   --black:#454545;
+   --green:#6abd6c;
+    --white: #FFFFFF; /* Matches usage */
+}
+.heading{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    /* background-color: var(--black); */
+    text-align: center;
+    min-height: 18vh;
+}
+.heading h3{
+    font-size: 2rem;
+    color:black;
+    text-transform: uppercase;
+}
+
+.heading p{
+    display: flex;
+    font-size: 1.3rem;
+    color:#6abd6c;
+    align-items: center;
+}
+.heading p a{
+    color:var(--black);
+}
+ 
+.heading p a:hover{
+    text-decoration: underline;
+}
+section.heading.i {
+    font-style: normal; /* Prevent styles affecting `i` tags */
+}
+hr {
+    height: 2px;
+    background-color:var(--black); /* Adjust the color */
+    margin: 10px auto;
+    width: 100%; /* Adjust the width */
+}
+.title{
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color:var(--black);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.placed-orders .box-container{
+    max-width: 1100px;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    align-items: flex-start;
+}
+ 
+.placed-orders .box-container .box{
+    background-color: var(--wht);
+    padding:0.5rem 1rem;
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    flex:1 1 30rem;
+    border-radius: .5rem;
+}
+ 
+.placed-orders .box-container .box p{
+    margin: 0.3rem 0;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color:var(--black);
+}
+ 
+.placed-orders .box-container .box p span{
+    color:var(--brw);
+}
+.btn,
+.delete-btn,
+.option-btn{
+   display: inline-block;
+   border-radius: 0.5rem;
+   margin-top: 0.5rem;
+   font-size: 1.2rem;
+   color:var(--white);
+   cursor: pointer;
+   padding:0.5rem 0.7rem;
+   text-transform: capitalize;
+}
+
+.btn{
+   background-color: var(--green);
+}
+
+.delete-btn{
+   background-color: var(--green);
+}
+
+.option-btn{
+   background-color: var(--orange);
+}
+
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+   background-color: var(--pink);
+}
+.more-btn{
+   margin-top: 2rem;
+   text-align: center;
+}
+.empty{
+    padding:1.5rem;
+    font-size: 1.5rem;
+    color:var(--brw);
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    background-color: var(--wht);
+    border-radius: .5rem;
+    text-transform: capitalize;
+}
+ 

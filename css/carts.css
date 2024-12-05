@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+:root{
+    --border:2px solid var(--black);
+   --box-shadow:0 .3rem 1rem rgba(0,0,0,.1);
+   --wht: #ffffff;
+   --pink:#fa504a;
+   --grey:#939185;
+   --brw:#b7825f;
+   --cream:#FFFDD0;
+   --black:#454545;
+   --green:#6abd6c;
+    --white: #FFFFFF; /* Matches usage */
+}
+
+.heading{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    /* background-color: var(--black); */
+    text-align: center;
+    min-height: 18vh;
+}
+.heading h3{
+    font-size: 2rem;
+    color:black;
+    text-transform: uppercase;
+}
+
+.heading p{
+    display: flex;
+    font-size: 1.3rem;
+    color:#6abd6c;
+    align-items: center;
+}
+.heading p a{
+    color:var(--black);
+}
+ 
+.heading p a:hover{
+    text-decoration: underline;
+}
+section.heading.i {
+    font-style: normal; /* Prevent styles affecting `i` tags */
+}
+hr {
+    height: 2px;
+    background-color:var(--black); /* Adjust the color */
+    margin: 10px auto;
+    width: 100%; /* Adjust the width */
+}
+.title{
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color:var(--black);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+.shopping-cart .box-container{
+    max-width: 1100px;
+   margin:0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 33rem);
+   gap:1.5rem;
+   align-items: flex-start;
+   justify-content: center;
+}
+   
+.shopping-cart .box-container .box{
+    /* padding:2rem;
+    text-align: center;
+    background-color: var(--wht);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    position: relative; */
+    width:400px;
+    height: 520px;
+     background-color: var(--wht);
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    padding:1rem;
+    text-align: center;
+    position: relative;
+}
+.shopping-cart .box-container .box .image{
+    height: 20rem;
+    width: auto;
+    object-fit: cover;
+}
+.shopping-cart .box-container .box .cross-icon {
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2rem;
+    font-size: 2.5rem;
+    border-radius: .5rem;
+}
+.shopping-cart .box-container .box .cross-icon{
+    background-color: var(--brw);
+    color:var(--wht);
+}
+ 
+.shopping-cart .box-container .box .cross-icon:hover{
+background-color: var(--pink);
+}
+.shopping-cart .box-container .box .name{
+    font-size: 1.3rem;
+    color:var(--black);
+ }
+ 
+ .shopping-cart .box-container .box .price{
+    font-size: 1.3rem;
+    color:var(--pink);
+    margin:.5rem 0;
+ }
+ 
+ .shopping-cart .box-container .box .qty{
+    width: 8rem;
+    height: 1.3rem;
+    padding:1rem 1rem;
+    border-radius: .5rem;
+    border:var(--border);
+    font-size: 1.3rem;
+ }
+ 
+ .shopping-cart .box-container .box .sub-total{
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    color:var(--black);
+ }
+ 
+ .shopping-cart .box-container .box .sub-total span{
+    color:var(--pink);
+ }
+.shopping-cart .cart-total{
+    max-width: 1100px;
+    margin:0 auto;
+    padding:1rem;
+    text-align: center;
+    background-color: var(--wht);
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+.shopping-cart .cart-total p{
+    font-size: 1.5rem;
+    color:var(--black);
+    margin-bottom: 1rem;
+}
+.shopping-cart .cart-total p span{
+    color:var(--pink);
+}
+.btn,
+.delete-btn,
+.option-btn{
+    display: inline-block;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color:var(--wht);
+    cursor: pointer;
+    padding:0.5rem 0.5rem;
+    text-transform: capitalize;
+}
+ 
+.btn{
+    background-color: var(--brw);
+}
+ 
+.delete-btn{
+    background-color: var(--brw);
+}
+ 
+.option-btn{
+    background-color: #6abd6c;
+}
+ 
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+    background-color: var(--pink);
+}
+.more-btn{
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.empty{
+    padding:1.5rem;
+    font-size: 1.5rem;
+    color:var(--brw);
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    background-color: var(--wht);
+    border-radius: .5rem;
+    text-transform: capitalize;
+}
+ 
+
+ 
+ 
+ 
+ 

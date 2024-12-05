@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+:root{
+    --border:2px solid var(--black);
+   --box-shadow:0 .3rem 1rem rgba(0,0,0,.1);
+   --wht: #ffffff;
+   --pink:#fa504a;
+   --grey:#939185;
+   --brw:#b7825f;
+   --cream:#FFFDD0;
+   --black:#454545;
+   --green:#6abd6c;
+    --white: #FFFFFF; /* Matches usage */
+}
+
+.heading{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    /* background-color: var(--black); */
+    text-align: center;
+    min-height: 18vh;
+}
+.heading h3{
+    font-size: 2rem;
+    color:black;
+    text-transform: uppercase;
+}
+
+.heading p{
+    display: flex;
+    font-size: 1.3rem;
+    color:#6abd6c;
+    align-items: center;
+}
+.heading p a{
+    color:var(--black);
+}
+ 
+.heading p a:hover{
+    text-decoration: underline;
+}
+section.heading.i {
+    font-style: normal; /* Prevent styles affecting `i` tags */
+}
+hr {
+    height: 2px;
+    background-color:var(--black); /* Adjust the color */
+    margin: 10px auto;
+    width: 100%; /* Adjust the width */
+}
+.search-form form{
+    max-width: 1200px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+ 
+.search-form form .box{
+    width: 100%;
+    border:var(--border);
+    background-color: var(--wht);
+    box-shadow: var(--box-shadow);
+    padding:0.5rem 0.7rem;
+    font-size: 1.2rem;
+    border-radius: .5rem;
+    margin: 1.5rem;
+}
+ 
+.search-form form .btn{
+    margin-top: 0;
+}
+.btn,
+.delete-btn,
+.option-btn{
+    display: inline-block;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color:var(--wht);
+    cursor: pointer;
+    padding:0.5rem 1rem;
+    text-transform: capitalize;
+}
+ 
+.btn{
+    background-color: var(--brw);
+}
+ 
+.delete-btn{
+    background-color: var(--brw);
+}
+ 
+.option-btn{
+    background-color: #6abd6c;
+}
+ 
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+    background-color: var(--green);
+}
+.empty{
+    padding:1rem;
+    font-size: 1.2rem;
+    color:var(--pink);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    background-color: var(--wht);
+    border-radius: .5rem;
+    text-transform: capitalize;
+    margin: 3rem;
+}

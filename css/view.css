@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+:root{
+    --border:2px solid var(--black);
+   --box-shadow:0 .3rem 1rem rgba(0,0,0,.1);
+   --wht: #ffffff;
+   --pink:#fa504a;
+   --grey:#939185;
+   --brw:#b7825f;
+   --cream:#FFFDD0;
+   --black:#454545;
+   --green:#6abd6c;
+}
+body{
+    background-color: #eeeee0;;
+}
+.quick-view .title {
+    font-size: 2rem; 
+    color: black; 
+    text-align: center; 
+    margin: 20px 0; 
+}
+.quick-view form{
+    max-width: 30rem;
+    padding:1.5rem;
+    text-align: center;
+    border:var(--border);
+    box-shadow: var(--border);
+    border-radius: .5rem;
+    background-color: var(--wht);
+    margin:0 auto;
+}
+ 
+.quick-view form .image{
+    height: 25rem;
+    /* border:var(--border); */
+    /* border-radius: .5rem; */
+    box-shadow: var(--box-shadow);
+}
+
+.quick-view form .name{
+    margin:0.5rem 0;
+    font-size: 1.3rem;
+    color:var(--black);
+}
+ 
+ .quick-view form .price{
+    color:var(--pink);
+    font-size: 1.5rem;
+}
+.quick-view form .details{
+    padding:0.5rem 0;
+    font-size: 1.2rem;
+    color:var(--black);
+    line-height: 1;
+}
+ 
+.quick-view form .qty{
+    width: 100%;
+    padding:0.2rem 0.5rem;
+    font-size: 1.2rem;
+    color:var(--black);
+    border-radius: .5rem;
+    border:var(--border);
+    margin-bottom: 1rem;
+}
+.btn,
+.delete-btn,
+.option-btn{
+    display: inline-block;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color:var(--wht);
+    cursor: pointer;
+    padding:0.5rem 1rem;
+    text-transform: capitalize;
+}
+ 
+.btn{
+    background-color: var(--brw);
+}
+ 
+.delete-btn{
+    background-color: var(--brw);
+}
+ 
+.option-btn{
+    background-color: #6abd6c;
+}
+ 
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+    background-color: var(--pink);
+}
+.empty{
+    padding:1rem;
+    font-size: 1.5rem;
+    color:var(--brw);
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    background-color: var(--wht);
+    border-radius: .5rem;
+    text-transform: capitalize;
+}
+ 
+.more-btn{
+    margin-top: 1rem;
+    text-align: center;
+}

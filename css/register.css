@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+body,h1,h2,h3{
+    margin:0;
+}
+header .logo{
+    font-family: "Qwitcher Grypen", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 70px;
+    color:black;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+body{
+    background-image: url("../images/bgregister.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.register{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    height: 80vh;
+    padding-right: 90px;
+    
+}
+.signup-form{
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+     /* background-color: rgb(233, 232, 232); */
+    margin-left: 8rem;
+}
+.register h2{
+    margin-bottom: 30px; 
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box; 
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fa504a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #ee6e6a;
+}
+.form-group p{
+    text-align: center;
+}
+.msg {
+    position: fixed;
+    background-color: #FFFDD0 ;/* Highlight it */
+    color: #fa504a;
+    font-size: 20px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 .3rem 1rem rgba(0,0,0,.1);
+    z-index: 10000;
+   
+}
+.msg span{
+    font-size: 3rem;
+}
+
+.msg i {
+    color: var(--red);
+    font-size: 25px;
+    cursor: pointer;
+}
