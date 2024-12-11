@@ -61,41 +61,40 @@ if (isset($_POST['add_to_cart'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Product</title>
         <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/product.css">
+        <link rel="stylesheet" href="css/products.css">
     </head>
 
     <body>
         <?php @include 'navbar.php'; ?>
-        <hr>
-        <section class="heading">
-            <h3>Our Products</h3>
-            <p> <a href="homepage.php"><i class='bx bx-home-alt'></i> &nbsp;Home</a> &nbsp;  &nbsp;
-                <i class='bx bxs-cart'></i> &nbsp; Products </p>
-        </section>
-        <hr>
         <section class="products">
-            <h1 class="title">Our Products</h1>
-            <div class="box-container">
+            <h1 >Our Products</h1>
+            
+            <div class="prod-container">
                 <?php
                     $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('Query failed');
                     if (mysqli_num_rows($select_products) > 0) {
                         while ($fetch_products = mysqli_fetch_assoc($select_products)) {
                 ?>
+                <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" >
                 <form action="" method="POST" class="box">
-                    <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="view-details">
-                        <p>View</p>
-                    </a>
-                    <div class="price">Rs.<?php echo $fetch_products['price']; ?>/-</div>
                     <img src="images/<?php echo $fetch_products['image']; ?>" alt="" class="image">
-                    <div class="name"><?php echo $fetch_products['name']; ?></div>
+                    <!-- <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="view-details">
+                        <p>View</p>
+                    </a> -->
+                    <div class="top-info">
+                        <div class="name"><?php echo $fetch_products['name']; ?></div>
+                        <div class="price">Rs.<?php echo $fetch_products['price']; ?>/-</div>
+                    </div>
                     <input type="number" name="product_quantity" value="1" min="0" class="qty">
                     <input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
                     <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
                     <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
                     <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-                            
-                    <input type="submit" value="Add to Cart" name="add_to_cart" class="btn">
+                </a>
+                    <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+                    <!-- <input type="submit" value="Add to Cart" name="add_to_cart" class="btn"> -->
                 </form>
+                
                 <?php
                     }
                     } else {
@@ -103,6 +102,7 @@ if (isset($_POST['add_to_cart'])) {
                     }
                 ?>
             </div>
+           
         </section>
         <script src="js/script.js"></script>
     </body>

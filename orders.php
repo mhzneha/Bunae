@@ -59,41 +59,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cancel_order'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>orders</title>
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/orders.css">
 </head>
 
 <body>
 
     <?php @include 'navbar.php'; ?>
-    <hr>
-    <section class="heading">
-        <h3>Orders</h3>
-        <p> <a href="homepage.php"><i class='bx bx-home-alt'></i> &nbsp;Home</a> &nbsp;  &nbsp;
-    <i class='bx bxs-cart' ></i> &nbsp; Order
-    </p>
-    </section>
-    <hr>
-
     <section class="placed-orders">
-
         <h1 class="title">Placed orders</h1>
-
         <div class="box-container">
-
             <?php
-        $select_orders = mysqli_query($conn, "SELECT * FROM `orders` WHERE user_id = '$user_id'") or die('query failed');
-        if(mysqli_num_rows($select_orders) > 0){
-            while($fetch_orders = mysqli_fetch_assoc($select_orders)){
-    ?>
+                $select_orders = mysqli_query($conn, "SELECT * FROM `orders` WHERE user_id = '$user_id'") or die('query failed');
+                if(mysqli_num_rows($select_orders) > 0){
+                    while($fetch_orders = mysqli_fetch_assoc($select_orders)){
+            ?>
             <div class="box">
                 <p> Placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
                 <p> Name : <span><?php echo $fetch_orders['name']; ?></span> </p>
-                <p> Number : <span><?php echo $fetch_orders['number']; ?></span> </p>
                 <p> Email : <span><?php echo $fetch_orders['email']; ?></span> </p>
+                <p> Number : <span><?php echo $fetch_orders['number']; ?></span> </p>
                 <p> Address : <span><?php echo $fetch_orders['address']; ?></span> </p>
                 <p> Payment method : <span><?php echo $fetch_orders['method']; ?></span> </p>
-                <p> Your orders : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
-                <p> Total price : <span>Rs.<?php echo $fetch_orders['total_price']; ?>/-</span> </p>
+                <p> Products : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
+                <p> Grand total : <span>Rs.<?php echo $fetch_orders['total_price']; ?>/-</span> </p>
                 <p> Order status : <span
                         style="color:<?php if($fetch_orders['payment_status'] == 'pending'){echo 'tomato'; }else{echo 'green';} ?>"><?php echo $fetch_orders['payment_status']; ?></span>
                 </p>

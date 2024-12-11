@@ -23,7 +23,7 @@ body{
     max-width: 30rem;
     padding:1.5rem;
     text-align: center;
-    border:var(--border);
+    border:none;
     box-shadow: var(--border);
     border-radius: .5rem;
     background-color: var(--wht);
@@ -55,13 +55,13 @@ body{
 }
  
 .quick-view form .qty{
-    width: 100%;
+    width: 85%;
     padding:0.2rem 0.5rem;
     font-size: 1.2rem;
     color:var(--black);
     border-radius: .5rem;
     border:var(--border);
-    margin-bottom: 1rem;
+    margin: 2rem;
 }
 .btn,
 .delete-btn,

@@ -66,11 +66,11 @@ if(isset($_POST['add_to_cart'])){
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>quick view</title>
+        <title>view</title>
         <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <!-- custom admin css file link  -->
-        <link rel="stylesheet" href="css/view.css">
+        <link rel="stylesheet" href="css/view_page.css">
     </head>
     <body>
         <?php @include 'navbar.php'; ?>
@@ -103,9 +103,9 @@ if(isset($_POST['add_to_cart'])){
                 }
                 }
             ?>
-            <div class="more-btn">
+            <!-- <div class="more-btn">
                 <a href="homepage.php" class="option-btn">Go to Home </a>
-            </div>
+            </div> -->
         </section>
         <script src="js/script.js"></script>
     </body>

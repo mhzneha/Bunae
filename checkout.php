@@ -57,6 +57,7 @@ if(isset($_POST['order'])){
         $message[] = 'order placed already!';
     }else{
         mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on')") or die('query failed');
+        mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('Query failed');
         if ($method === 'cash on delivery') {
             echo "<script>alert('Order placed successfully! Your order will be delivered soon.');</script>";
         } elseif ($method === 'khalti') {
@@ -83,48 +84,15 @@ if(isset($_POST['order'])){
             <title>Checkout</title>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- custom admin css file link  -->
-            <link rel="stylesheet" href="css/checkouts.css">
+            <link rel="stylesheet" href="css/checkout.css">
 
     </head> 
 
     <body>
         <?php @include 'navbar.php'; ?>
-        <hr>
-        <section class="heading">
-            <h3>Checkout List</h3>
-            <p> <a href="homepage.php"><i class='bx bx-home-alt'></i> &nbsp;Home</a> &nbsp;  &nbsp;
-                <i class='bx bxs-cart' ></i> &nbsp; Cart
-            </p>
-        </section>
-        <hr>
-
-        <section class="display-order">
-            <?php
-            $grand_total = 0;
-            $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-            if(mysqli_num_rows($select_cart) > 0){
-                while($fetch_cart = mysqli_fetch_assoc($select_cart)){
-                $total_price = ($fetch_cart['price'] * $fetch_cart['quantity']);
-                $grand_total += $total_price;
-            ?>
-            <p> <?php echo $fetch_cart['name'] ?>
-                <span>(<?php echo 'Rs.'.$fetch_cart['price'].'/-'.' x '.$fetch_cart['quantity']  ?>)</span>
-            </p>
-            <?php
-                }
-                }else{
-                    echo '<p class="empty">No any Orders</p>';
-                }
-            ?>
-            <div class="grand-total">grand total : <span>Rs.<?php echo $grand_total; ?>/-</span></div>
-        </section>
-
         <section class="checkout">
-
+        <h1 class="title">Checkout</h1>
             <form action="" method="POST">
-
-                <h3>Place Your Order</h3>
-
                 <div class="flex">
                     <div class="inputBox">
                         <span>Full Name :</span>
@@ -146,44 +114,73 @@ if(isset($_POST['order'])){
                             <!-- till here  -->
                     </div>
                     <div class="inputBox">
-                        <span>Payment Method :</span>
-                        <select name="method">
-                            <option value="cash on delivery">Cash on Delivery</option>
-                            <option value="khalti">Khalti</a></option>
-                            <!-- <option value="khalti">e-khalti</option>
-                            <option value="paytm">fone pay</option> -->
-                        </select>
-                    </div>
-                    <div class="inputBox">
                         <span>Full Address :</span>
                         <input type="text" name="fulladdress" placeholder="Enter your address" required>
                     </div>
                     <div class="inputBox">
-                        <span>House number :</span>
-                        <input type="text" name="house_number" placeholder="e.g. House number " required>
+                        <span>Popular area</span>
+                        <input type="text" name="house_number" placeholder="e.g area that is known" required>
                     </div>
                     <div class="inputBox">
                         <span>City :</span>
                         <input type="text" name="city" placeholder="e.g. kathmandu" required>
                     </div>
-                    <!-- <div class="inputBox">
-                        <span>state :</span>
-                        <input type="text" name="state" placeholder="e.g. ">
-                    </div> -->
-                    <!-- <div class="inputBox">
-                        <span>country :</span>
-                        <input type="text" name="country" placeholder="e.g. nepal">
-                    </div> -->
-                    <!-- <div class="inputBox">
-                        <span>pin code :</span>
-                        <input type="number" min="0" name="pin_code" placeholder="e.g. 123456">
-                    </div> -->
+                </div>
+                <section class="display-order">
+                    <?php
+                    $grand_total = 0;
+                    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+                    if(mysqli_num_rows($select_cart) > 0){
+                        while($fetch_cart = mysqli_fetch_assoc($select_cart)){
+                        $total_price = ($fetch_cart['price'] * $fetch_cart['quantity']);
+                        $grand_total += $total_price;
+                    ?>
+                    <p> <?php echo $fetch_cart['name'] ?>
+                        <span>(<?php echo 'Rs.'.$fetch_cart['price'].'/-'.' x '.$fetch_cart['quantity']  ?>)</span>
+                    </p>
+                    <?php
+                        }
+                        }else{
+                            echo '<p class="empty">No any Orders</p>';
+                        }
+                    ?>
+                    <div class="grand-total">Total amout: <span>Rs.<?php echo $grand_total; ?>/-</span></div>
+                </section>
+                <!-- <div class="inputBox">
+                    <span>Payment Method :</span>
+                    <section name="method">
+                        <option value="cash on delivery">Cash on Delivery</option>
+                        <option value="khalti">Khalti</a></option>
+                    </section>
+                </div> -->
+                <div class="inputBox">
+                    <span>Payment Method:</span>
+                    <section class="method">
+                        <!-- "Cash on Delivery" -->
+                        <button type="button" id="cashOnDeliveryBtn" class="btn">Cash on Delivery</button>
+                        <!-- "Khalti Payment" -->
+                        <button type="button" id="khaltiBtn" class="btn">Khalti</button>
+                    </section>
                 </div>
 
-                <input type="submit" name="order" value="order now" class="btn">
+                <script>
+                    // Handle "Cash on Delivery" button click
+                    document.getElementById('cashOnDeliveryBtn').addEventListener('click', function() {
+                        alert('Order placed successfully! Your order will be delivered soon.');
+                    });
+
+                    // Handle "Khalti" button click
+                    document.getElementById('khaltiBtn').addEventListener('click', function() {
+                        window.location.href = 'payment.php';
+                    });
+                </script>
+
+
+                <!-- <input type="submit" name="order" value="order now" class="btn"> -->
 
             </form>
         </section>
+
         <script src="js/script.js"></script>
     </body>
 </html>
