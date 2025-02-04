@@ -66,7 +66,7 @@ if(isset($_POST['add_to_cart'])){
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>search page</title>
+        <title>search</title>
         <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/search.css">
         <link rel="stylesheet" href="css/products.css">
@@ -84,7 +84,9 @@ if(isset($_POST['add_to_cart'])){
         <section class="search-form">
             <form action="" method="POST">
                 <input type="text" class="box" placeholder="search products..." name="search_box">
-                <input type="submit" class="btn" value="search" name="search_btn">
+                <button type="submit" class="search-icon" name="search_btn">
+                <i class='bx bx-search nav-icon'></i>
+            </button>
             </form>
         </section>
 

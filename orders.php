@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cancel_order'])) {
 
     <?php @include 'navbar.php'; ?>
     <section class="placed-orders">
-        <h1 class="title">Placed orders</h1>
+        <h1 class="title">Orders</h1>
         <div class="box-container">
             <?php
                 $select_orders = mysqli_query($conn, "SELECT * FROM `orders` WHERE user_id = '$user_id'") or die('query failed');

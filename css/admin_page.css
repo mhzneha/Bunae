@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+:root{
+    --border:2px solid var(--black);
+   --box-shadow:0 .3rem 1rem rgba(0,0,0,.1);
+   --wht: #ffffff;
+   --pink:#fa504a;
+   --grey:#d8d8d8;
+   --brw:#b7825f;
+   --cream:#FFFDD0;
+   --black:#454545;
+   --green:#6abd6c;
+    --white: #FFFFFF; /* Matches usage */
+}
+body{
+    background-color: rgb(245, 242, 242);
+}
+.contacts h1{
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color:var(--black);
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.contact{
+    /* background-color: var(--wht); */
+    margin: 20px auto;
+    padding: 20px;
+    /* border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 35%;
+    height: 100%;
+}
+.contact i {
+    display: block;
+    margin: 15px 0;
+    font-size: 1.7rem;
+    padding: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--black);
+}
+.user-form {
+    width:45%;
+    background-color: #fff;
+    margin: 1rem;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 4rem;
+}
+.user-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+    font-size: 1.7rem;
+}
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color:var(--border);
+}
+textarea {
+    resize: none;
+}
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fa504a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #ee6e6a;
+}
+
+.show .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25rem);
+    gap:1rem;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+
+    /* width: 100%;
+    margin:0 auto;
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    gap:1rem;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 1rem; */
+ }
+ 
+ .show .box-container .box{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+.show .box-container .box .image{
+    max-height: 17rem;
+    margin-bottom: 0.5rem;
+    width: 100;
+    object-fit: cover;
+ }
+ .products .prod-container .box .top-info {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 90%;
+    margin-top: 1rem; 
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+ .show .box-container .box .price{
+    font-size: 1.5rem;
+    color:var(--pink);
+    margin:.5rem 0;
+}
+.show .box-container .box .name{
+    font-size: 1.5rem;
+    color:var(--black);
+}
+ 
+.show .box-container .box .details{
+    line-height: 1.5;
+    color:var(--light-color);
+    font-size: 1.3rem;
+    padding:.5rem 0;
+}
+
+.btn,
+.delete-btn,
+.option-btn{
+    display: inline-block;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color:var(--wht);
+    cursor: pointer;
+    padding:0.5rem 0.5rem;
+    text-transform: capitalize;
+}
+ 
+.btn{
+    background-color: var(--brw);
+}
+ 
+.delete-btn{
+    background-color: var(--brw);
+}
+ 
+.option-btn{
+    background-color: #6abd6c;
+}
+ 
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+    background-color: var(--pink);
+}
+.more-btn{
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.empty{
+    padding:1.5rem;
+    font-size: 1.5rem;
+    color:var(--brw);
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    background-color: var(--wht);
+    border-radius: .5rem;
+    text-transform: capitalize;
+}

@@ -24,7 +24,6 @@ body{
     align-items: center;
     height: 80vh;
     padding-right: 90px;
-    
 }
 .signin-form{
     padding: 30px;
@@ -80,7 +79,18 @@ body{
 .form-group p{
     text-align: center;
 }
+.form-group a p{
+    text-decoration: none;
+    color: #4facfe;
+    font-size: 14px;
+    transition: 0.3s;
+    text-align: center;
+}
 
+.form-group a:hover {
+    text-decoration: underline;
+    color: #00f2fe;
+}
 
 .msg {
     position: fixed;

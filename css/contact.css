@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+:root{
+    --border:2px solid var(--black);
+   --box-shadow:0 .3rem 1rem rgba(0,0,0,.1);
+   --wht: #ffffff;
+   --pink:#fa504a;
+   --grey:#939185;
+   --brw:#b7825f;
+   --cream:#FFFDD0;
+   --black:#454545;
+   --green:#6abd6c;
+    --white: #FFFFFF; /* Matches usage */
+}
+body{
+    background-color: rgb(245, 242, 242);
+}
+.contacts h1{
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color:var(--black);
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.contact{
+    /* background-color: var(--wht); */
+    margin: 20px auto;
+    padding: 20px;
+    /* border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 35%;
+    height: 100%;
+}
+.contact i {
+    display: block;
+    margin: 15px 0;
+    font-size: 1.7rem;
+    padding: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--black);
+}
+.user-form {
+    width:45%;
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.user-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+    font-size: 1.7rem;
+}
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color:var(--border);
+}
+textarea {
+    resize: none;
+}
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fa504a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #ee6e6a;
+}

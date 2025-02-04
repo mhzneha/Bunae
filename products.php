@@ -4,6 +4,8 @@ $user_id = "";
 session_start();
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
 
+$select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('Query failed');
+
 // Ensure that the user_id exists in the users table before proceeding
 if ($user_id != '') {
     $check_user = mysqli_prepare($conn, "SELECT * FROM `users` WHERE `id` = ?");

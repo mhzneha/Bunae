@@ -11,7 +11,7 @@ curl_setopt_array($curl, array(
     CURLOPT_CUSTOMREQUEST => 'POST',
     CURLOPT_POSTFIELDS => json_encode([
         "return_url" => "http://localhost/ECOM/orders.php",
-        "website_url" => "http://localhost/ECOM/product.php",
+        "website_url" => "http://localhost/ECOM/products.php",
         "amount" => "1000",
         "purchase_order_id" => "Order01",
         "purchase_order_name" => "test",
@@ -34,49 +34,6 @@ curl_close($curl);
 $response_data = json_decode($response, true);
 
 // Return the payment URL
-echo $response_data['payment_url'];
+header( "Location:".$response_data['payment_url']);
 ?>
 
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khalti Integration</title>
-    <script src="https://khalti.com/static/khalti-checkout.js"></script>
-</head>
-<body>
-    <h1>Pay with Khalti</h1>
-    <button id="payButton">Pay with Khalti</button>
-
-    <script>
-        var khaltiConfig = {
-            publicKey: "live_public_key_869119a676d24c159c2155077e796cd6", 
-            productIdentity: "Order01",
-            productName: "Sample Product",
-            productUrl: "http://localhost/ECOM/orders.php",
-            eventHandler: {
-                onSuccess(payload) {
-                    console.log("Payment Successful!", payload);
-                    alert("Payment successful. Redirecting...");
-                    window.location.href = "http://localhost/ECOM/orders.php?status=success";
-                },
-                onError(error) {
-                    console.error("Payment Error:", error);
-                    alert("Something went wrong. Please try again.");
-                },
-                onClose() {
-                    console.log("Payment popup closed.");
-                }
-            }
-        };
-
-        var khaltiCheckout = new KhaltiCheckout(khaltiConfig);
-
-        document.getElementById("payButton").onclick = function () {
-            khaltiCheckout.show({ amount: 1000 });
-        };
-    </script>
-</body>
-</html> -->

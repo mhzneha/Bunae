@@ -29,7 +29,10 @@
     border-radius: .5rem;
     margin: 1.5rem;
 }
- 
+button .search-icon{
+    background-color: none;
+    border: none;
+ }
 .search-form form .btn{
     margin-top: 0;
 }
